@@ -1,10 +1,38 @@
 
 
 .textbox{
-  background-color: #091a50;
+  background-color: #7aa8fd;
   background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png);
-  height: 0;
+  border: none;
   border-bottom: 4px solid black;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  /* border-color:  #7aa8fd; */
+  
+  /* background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png); */
 }
+
+
+.new-tweet {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* .counter{
+  display: fle;
+} */
+
+.tweetfooter{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.7em;
+}
+
+.button {
+  font-family: 'Bungee', cursive;
+  color: #FFFFFF;
+  font-size: 20px;
+  background-color: #4056A1;
+  }
+
