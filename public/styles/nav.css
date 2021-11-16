@@ -1,0 +1,30 @@
+
+ .nav{
+  font-family: 'Source Code', sans-serif;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  
+}
+
+
+.title {
+  font-family: 'Bungee', cursive;
+  color: #FFFFFF;
+  font-size: 40px;
+  padding-bottom: 0.9em;
+}
+
+.rightnav {
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+.arrow{
+  color: rgb(194, 12, 37);
+}
+

@@ -1,0 +1,26 @@
+
+.head {
+  height: 400px;
+  background-color: #091a50;
+background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png);
+}
+
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundBody {
+  height: 400px;
+  background-color: #091a50;
+  background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png);
+  }
+

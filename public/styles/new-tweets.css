@@ -1,0 +1,10 @@
+
+
+.textbox{
+  background-color: #091a50;
+  background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png);
+  height: 0;
+  border-bottom: 4px solid black;
+  display: flex;
+  flex-direction: column;
+}
