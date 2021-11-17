@@ -9,6 +9,9 @@
   align-items: flex-end;
   padding-left: 1.5em;
   padding-right: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
   
 }
 
@@ -25,6 +28,9 @@
   padding-bottom: 0.5em;
 }
 .arrow{
-  color: rgb(194, 12, 37);
+  color: white;
 }
 
+.arrow:hover{
+  color: rgb(106, 216, 250)
+}

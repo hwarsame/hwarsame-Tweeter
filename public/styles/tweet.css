@@ -61,10 +61,14 @@
   box-shadow: 10px 5px 5px rgb(44, 174, 235);
 }
 
+.tweet2:hover{
+  box-shadow: 10px 5px 5px rgb(44, 174, 235);
+}
+
 .timestamp{
   padding-bottom: 0.75em;
   padding-left: 0.5em;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .timestamp:hover{
@@ -105,10 +109,14 @@ color: rgb(106, 216, 250);
 }
 
 .name:hover{
-  color:rgb(106, 216, 250);
+  color: black
 }
 .tweetFooter{
   display: flex;
   justify-content: space-between;
 }
 
+.icons{
+  font-size: 18px;
+  padding-right: 0.3em;
+}
