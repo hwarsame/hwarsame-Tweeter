@@ -19,16 +19,19 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel = "stylesheet" href="/styles/header.css" type="text/css"/>
-  <link rel = "stylesheet" href="/styles/main.css" type="text/css">
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css">
   <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css">
-  
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
+
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body class="backgroundBody">
@@ -40,30 +43,56 @@
       <div><strong>Write</strong> a new tweet</div>
       <div class="arrow"><i class="fas fa-angle-double-down"></i></div>
     </div>
-  </div>
+    </div>
   </nav>
-  <header class ="head">
-    <div class = "image">
-        <img src="/images/profile-hex.png"> 
+  <header class="head">
+    <div class="image">
+      <img src="/images/profile-hex.png">
     </div>
     <br>
     <div class="name">
-        <h2>Created by Hamza Warsame</h2>
+      <h2>Created by Big H</h2>
     </div>
-</header>
- 
+  </header>
+
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet" >
+    <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST">
-         <!-- for="tweet-text" class = "question">What are you humming about?</label> -->
-        <input placeholder="What are you humming about?" class= "textbox"name="text" id="tweet-text"></input>
-        <div class = "tweetfooter">
-          <button type="submit" class = "button">Tweet</button>
+      <form class="formTweet" action="/tweets" method="POST">
+        <!-- for="tweet-text" class = "question">What are you humming about?</label> -->
+        <textarea placeholder="What are you humming about?" class="textbox" name="text" id="tweet-text"></textarea>
+        <div class="tweetfooter">
+          <button type="submit" class="button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
+
         </div>
       </form>
+    </section>
+    <section class="postTweet">
+      <article class="tweet">
+        <div class="tweetHeader">
+          <span class="avatar"><img src="https://imgur.com/nlhLi3I.png"><span class="name">Arthur</span></span>
+          <span class="username">@spider123</span>
+        </div>
+        <p class="tweetInput"> DID YOU GUYS SEE THE LION ESCAPE FROM THE ZOO??!!!</p>
+        <hr class="divider">
+        <div class="tweetFooter">
+          <span class="timestamp">11/15/20 <i class="fas fa-retweet"></i></span>
+        </div>
+      </article>
+      <article class="tweet">
+        <div class="tweetHeader">
+          <span class="avatar"><img src="https://imgur.com/73hZDYK.png"><span class="name">Ahmed</span></span>
+          <span class="username">@tank456</span>
+        </div>
+        <p class="tweetInput" name="text">LEBRON VS MJ 1v1 in their pimes? Who u got???</p>
+        <hr class="divider">
+        <div class="tweetFooter">
+          <span class="timestamp">11/15/21 <i class="fas fa-retweet"></i></span>
+          <!-- <span class="retweet">retweet</span> -->
+        </div>
+      </article>
     </section>
   </main>
 </body>

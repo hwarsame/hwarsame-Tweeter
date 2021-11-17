@@ -1,0 +1,69 @@
+.postTweet{
+  background-color: #7aa8fd;
+  background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png);
+  /* border: black;
+  border-bottom: 4px solid black; */
+  display: flex;
+  flex-direction: column;
+  width: 100;
+  margin-top: 1em;
+  margin:0 auto;
+}
+
+.tweet{
+  background-color: #7aa8fd;
+  background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png);
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 100;
+  margin-top: 1em
+}
+
+
+
+.avatar{
+  display: inline-flex;
+}
+
+.tweetInput{
+  display: flex;
+  text-indent: 1.5em;
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0
+}
+.divider{
+  width: 95%;
+  text-align:left;
+  height: 16px solid;
+  color: black
+
+}
+
+.tweetHeader{
+  display: flex;
+  justify-content: space-between;
+}
+/* .timestamp{
+
+} */
+
+.tweet:hover{
+  box-shadow: 10px 5px 5px rgb(44, 174, 235);
+}
+
+.timestamp{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.75em;
+}
+.fas.fa-retweet:hover{
+background-color: rgb(106, 216, 250);
+}
+
+
+/* .name {
+  display: flex;
+  
+} */

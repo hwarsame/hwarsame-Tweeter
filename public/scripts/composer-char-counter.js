@@ -4,13 +4,14 @@ $(document).ready(function() {
     // console.log($(this));
     const $tweet = $(this);
     const $counter = $tweet.closest('form').find('.counter')
+    const $value = $tweet.val()
     // console.log($tweet.val());
-    if ($tweet.val().length > 140){
+    if ($value.length > 140){
       $counter.addClass('redtext');
     }
     else {
       $counter.removeClass('redtext');
     }
-    $counter.html(140 - $tweet.val().length)
+    $counter.html(140 - $value.length)
   })
 });
