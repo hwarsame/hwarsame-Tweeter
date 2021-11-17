@@ -19,9 +19,9 @@
   width: 90%;
 }
 
-/* .counter{
-  display: fle;
-} */
+.counter{
+  font-family: 'Bungee', cursive;
+}
 
 .tweetfooter{
   display: flex;
