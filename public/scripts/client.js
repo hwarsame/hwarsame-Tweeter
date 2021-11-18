@@ -1,4 +1,5 @@
 $(document).ready(function() { 
+
   const data = [
     {
       "user": {
@@ -49,5 +50,38 @@ const renderTweets = function(tweets) {
     $('.postTweet').append(newTweet);
   }
 }
-renderTweets(data);
+// renderTweets(data);
+
+// // $( "#target" ).submit(function( event ) {
+//   alert( "Handler for .submit() called." );
+//   event.preventDefault();
+// });
+// // 
+$('.formTweet').submit(function(event){
+  const $input = $(this).serialize()
+  console.log($input)
+  event.preventDefault();
+  $.ajax({
+    method: 'POST',
+    url: '/tweets',
+    data: $input
+  }).then((result)=>{
+    loadTweets(result);
+  })
+})
+
+//load tweets
+
+  const loadTweets = function(){
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+    }).then((data)=>{
+      console.log("TEST",data);
+      renderTweets(data)
+    })
+  
+  
+  }
+loadTweets();
 });
