@@ -58,9 +58,17 @@ const renderTweets = function(tweets) {
 // });
 // // 
 $('.formTweet').submit(function(event){
-  const $input = $(this).serialize()
-  console.log($input)
+  const $input = $(this).serialize();
   event.preventDefault();
+  const char = $('#tweet-text').val()
+  if(char.length === 0){
+    alert('Please input some text before you tweet!');
+    return
+  } 
+  else if (char.length > 140){
+    alert('You have exceeded the character limit!')
+    return
+  }
   $.ajax({
     method: 'POST',
     url: '/tweets',
