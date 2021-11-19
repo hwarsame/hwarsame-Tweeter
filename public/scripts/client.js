@@ -82,6 +82,8 @@ $('.formTweet').submit(function(event){
     // alert('You have exceeded the character limit!')
     return
   }
+  $('.error').hide();
+  
   $.ajax({
     method: 'POST',
     url: '/tweets',
