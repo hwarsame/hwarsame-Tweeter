@@ -13,6 +13,12 @@
   /* background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png); */
 }
 
+.error{ 
+  margin-bottom: 2em;
+  border: dotted;
+  border-color: red;
+  color: red;
+}
 
 .new-tweet {
   margin: 0 auto;

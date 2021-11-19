@@ -1,4 +1,10 @@
 $(document).ready(function() { 
+ 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const data = [
     {
@@ -30,7 +36,7 @@ const createTweetElement = function(data){
           <span class="avatar"><img src=${data.user.avatars}><span class="tweetername">${data.user.name}</span></span>
           <span class="username">${data.user.handle}</span>
         </div>
-        <p class="tweetInput"> ${data.content.text}</p>
+        <p class="tweetInput"> ${escape(data.content.text)}</p>
         <hr class="divider">
         <div class="tweetFooter">
           <span class="timestamp">${timeago.format(data.created_at)} </span>
@@ -42,6 +48,9 @@ const createTweetElement = function(data){
         </div>
       </article>`
 }
+
+
+
 
 
 const renderTweets = function(tweets) {
@@ -57,17 +66,20 @@ const renderTweets = function(tweets) {
 //   event.preventDefault();
 // });
 // // 
+$('.error').hide()
 $('.formTweet').submit(function(event){
   const $input = $(this).serialize();
   event.preventDefault();
   const tweetElement = $('#tweet-text')
   const char = tweetElement.val().length;
   if(char === 0){
-    alert('Please input some text before you tweet!');
+    // alert('Please input some text before you tweet!');
+    $('.error').slideDown()
     return
   } 
   else if (char > 140){
-    alert('You have exceeded the character limit!')
+    $('.error').slideDown()
+    // alert('You have exceeded the character limit!')
     return
   }
   $.ajax({
