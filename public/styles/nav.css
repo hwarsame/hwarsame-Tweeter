@@ -12,7 +12,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  
+  background-image: none;
 }
 
 
@@ -28,9 +28,17 @@
   padding-bottom: 0.5em;
 }
 .arrow{
-  color: white;
+  color: rgb(204, 0, 0);
 }
 
 .arrow:hover{
-  color: rgb(106, 216, 250)
+  color: rgb(0, 0, 0)
+}
+
+
+@media only screen and (max-width: 768px){
+ .nav{
+   background-color: #063285;
+   background-image: url(http://www.transparenttextures.com/patterns/axiom-pattern.png); ;
+ }
 }

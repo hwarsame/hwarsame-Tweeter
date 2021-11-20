@@ -1,6 +1,6 @@
-$(document).ready(function() { 
+$(document).ready(function() {
  
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -29,9 +29,9 @@ $(document).ready(function() {
       },
       "created_at": 1461113959088
     }
-  ]
-const createTweetElement = function(data){
- return `<article class="tweet">
+  ];
+  const createTweetElement = function(data) {
+    return `<article class="tweet">
         <div class="tweetHeader">
           <span class="avatar"><img src=${data.user.avatars}><span class="tweetername">${data.user.name}</span></span>
           <span class="username">${data.user.handle}</span>
@@ -46,56 +46,56 @@ const createTweetElement = function(data){
             <i class="fas fa-bookmark"></i>
           </div>
         </div>
-      </article>`
-}
+      </article>`;
+  };
 
 
 
 
 
-const renderTweets = function(tweets) {
-  for (let post of tweets){
-   let newTweet = createTweetElement(post)
-    $('.tweet-Container').append(newTweet);
-  }
-}
-// renderTweets(data);
+  const renderTweets = function(tweets) {
+    for (let post of tweets) {
+      let newTweet = createTweetElement(post);
+      $('.tweet-Container').append(newTweet);
+    }
+  };
+  // renderTweets(data);
 
-// // $( "#target" ).submit(function( event ) {
-//   alert( "Handler for .submit() called." );
-//   event.preventDefault();
-// });
-// // 
-$('.error').hide()
-$('.formTweet').submit(function(event){
-  const $input = $(this).serialize();
-  event.preventDefault();
-  const tweetElement = $('#tweet-text')
-  const char = tweetElement.val().length;
-  if(char === 0){
-    // alert('Please input some text before you tweet!');
-    $('.error').slideDown()
-    return
-  } 
-  else if (char > 140){
-    $('.error').slideDown()
-    // alert('You have exceeded the character limit!')
-    return
-  }
+  // // $( "#target" ).submit(function( event ) {
+  //   alert( "Handler for .submit() called." );
+  //   event.preventDefault();
+  // });
+  // //
   $('.error').hide();
+  $('.formTweet').submit(function(event) {
+    const $input = $(this).serialize();
+    event.preventDefault();
+    const tweetElement = $('#tweet-text');
+    const char = tweetElement.val().length;
+    if (char === 0) {
+    // alert('Please input some text before you tweet!');
+      $('.error').slideDown();
+      return;
+    } else if (char > 140) {
+      $('.error').slideDown();
+      // alert('You have exceeded the character limit!')
+      return;
+    }
+    $('.error').hide();
   
-  $.ajax({
-    method: 'POST',
-    url: '/tweets',
-    data: $input
-  }).then((result)=>{
-    tweetElement.val('');
-    loadTweets(result);
-  })
-})
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: $input
+    }).then((result)=>{
+      tweetElement.val('');
+      tweetElement.closest('form').find('.counter').val(140);
+      loadTweets(result);
+    });
+  });
 
-//load tweets
-  const loadTweets = function(){
+  //load tweets
+  const loadTweets = function() {
     $.ajax({
       method: 'GET',
       url: '/tweets',
@@ -104,7 +104,7 @@ $('.formTweet').submit(function(event){
       const sortedData = data.sort((a,b)=> b.created_at - a.created_at);
       $('.tweet-Container').html("");
       renderTweets(sortedData);
-    })  
-  }
-loadTweets();
+    });
+  };
+  loadTweets();
 });

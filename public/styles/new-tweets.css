@@ -6,7 +6,6 @@
   border: none;
   border-bottom: 4px solid black;
   display: flex;
-  flex-direction: column;
   width: 100%;
 }
 
